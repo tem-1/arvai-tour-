@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
-// import CurrenctyMegaMenu from "../CurrenctyMegaMenu";x
+// import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import MobileMenu from "../MobileMenu";
 
@@ -33,7 +33,6 @@ const Header1 = () => {
                   <img src="/img/general/logo-dark.svg" alt="logo icon" />
                 </Link>
                 {/* End logo */}
-
                 <div className="header-menu">
                   <div className="header-menu__content">
                     <MainMenu style="text-dark-1" />

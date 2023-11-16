@@ -61,42 +61,42 @@ export const dashboardItems = [
     name: "Dashboard",
     routePath: "/dashboard/db-dashboard",
   },
-  {
-    name: "Booking History",
-    routePath: "/dashboard/db-booking",
-  },
-  {
-    name: "Wishlist",
-    routePath: "/dashboard/db-wishlist",
-  },
-  {
-    name: "Settings",
-    routePath: "/dashboard/db-settings",
-  },
-  {
-    name: "Vendor Dashboard",
-    routePath: "/vendor-dashboard/dashboard",
-  },
-  {
-    name: "Vendor Add Hotel",
-    routePath: "/vendor-dashboard/add-hotel",
-  },
-  {
-    name: "Vendor Booking",
-    routePath: "/vendor-dashboard/booking",
-  },
-  {
-    name: "Vendor Hotels",
-    routePath: "/vendor-dashboard/hotels",
-  },
-  {
-    name: "Vendor Recovery",
-    routePath: "/vendor-dashboard/recovery",
-  },
-  {
-    name: "Logout",
-    routePath: "/others-pages/login",
-  },
+  // {
+  //   name: "Booking History",
+  //   routePath: "/dashboard/db-booking",
+  // },
+  // {
+  //   name: "Wishlist",
+  //   routePath: "/dashboard/db-wishlist",
+  // },
+  // {
+  //   name: "Settings",
+  //   routePath: "/dashboard/db-settings",
+  // },
+  // {
+  //   name: "Vendor Dashboard",
+  //   routePath: "/vendor-dashboard/dashboard",
+  // },
+  // {
+  //   name: "Vendor Add Hotel",
+  //   routePath: "/vendor-dashboard/add-hotel",
+  // },
+  // {
+  //   name: "Vendor Booking",
+  //   routePath: "/vendor-dashboard/booking",
+  // },
+  // {
+  //   name: "Vendor Hotels",
+  //   routePath: "/vendor-dashboard/hotels",
+  // },
+  // {
+  //   name: "Vendor Recovery",
+  //   routePath: "/vendor-dashboard/recovery",
+  // },
+  // {
+  //   name: "Logout",
+  //   routePath: "/others-pages/login",
+  // },
 ];
 
 export const categorieMegaMenuItems = [
