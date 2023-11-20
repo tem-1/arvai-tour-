@@ -19,7 +19,7 @@ const SearchBoxContent = () => {
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                Book better cars from local hosts across the US and around the
+                Book better cars from local hosts across the US and around th e
                 world.
               </p>
             </div>
