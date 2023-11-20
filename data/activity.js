@@ -9,7 +9,7 @@ module.exports = [
     numberOfReviews: "94",
     ratings: "4.82",
     price: "67",
-    delayAnimation: "100",
+    delayAnimation: "100", 
   },
   {
     id: 2,

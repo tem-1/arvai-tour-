@@ -6,6 +6,8 @@ const index = () => {
   return (
     <>
       <section className="masthead -type-7">
+      <MainFilterSearchBox />
+
         <div className="masthead-slider js-masthead-slider-7">
           <Swiper
             modules={[Navigation]}
@@ -15,6 +17,8 @@ const index = () => {
               prevEl: ".hero7-prev-active",
             }}
           >
+            <MainFilterSearchBox />
+          
             <SwiperSlide>
               <div className="row justify-center text-center">
                 <div className="col-auto">
