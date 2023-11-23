@@ -5,7 +5,10 @@ const { Schema, model, models } = mongoose;
 const countrySchema = new Schema({
     countryName: {
         type: String,
-
+    },
+    photo: {
+        type: String,
+        default: "no country photo"
     },
     createDate: {
         type: Date,
