@@ -1,5 +1,5 @@
 import { connectMongoDB } from "../../libs/connectMongoDb";
-import { handleGetRequest, handleGetDetailRequest, handleGetRequestDetail, handlePostRequest, handlePutRequest, handleDeleteRequest } from "../../libs/controller/countryController";
+import { handleGetRequest, handleGetDetailRequest, handleGetRequestDetail, handlePostRequest, handlePutRequest, handleDeleteRequest } from "../../libs/controller/aboutController";
 import util from 'util';
 import upload from "../../libs/middleware/fileUpload";
 export const config = {
@@ -7,8 +7,13 @@ export const config = {
         bodyParser: false, // Disable built-in body parsing to use the upload middleware
     },
 };
+const cpUpload = upload.fields([
+    { name: 'file' },
+    { name: 'file1' },
+    { name: 'file2' },
+])
 connectMongoDB();
-const uploadPromise = util.promisify(upload.single('file'));
+const uploadPromise = util.promisify(cpUpload);
 export default async function handler(req, res) {
     try {
         switch (req.method) {

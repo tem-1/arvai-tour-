@@ -10,9 +10,9 @@ export const config = {
 
 connectMongoDB();
 const cpUpload = upload.fields([
+    { name: 'file' },
     { name: 'file1' },
     { name: 'file2' },
-    { name: 'file3' },
 ])
 const uploadPromise = util.promisify(cpUpload);
 

@@ -90,7 +90,7 @@ export async function handlePutRequest(req, res) {
     try {
         const { id } = req.query; // Assuming the ID is part of the request parameters
         // Assuming you have a function like findByIdAndUpdate to update an existing record
-        const oldData = await Template.findById(id);
+        const oldData = await About.findById(id);
         if (!oldData) {
             // Handle the case where the record with the given ID was not found
             return res.status(404).json({
@@ -98,9 +98,20 @@ export async function handlePutRequest(req, res) {
                 error: 'Record not found',
             });
         }
+        const fileName = req.files["file"]
+            ? req.files["file"][0].filename
+            : "defualt file not photo";
+        const fileName1 = req.files["file1"]
+            ? req.files["file1"][0].filename
+            : "defualt file not photo1?";
+        const fileName2 = req.files["file2"]
+            ? req.files["file2"][0].filename
+            : "defualt file not photo2?";
         const input = {
             ...req.body,
-            photo: req.file ? req.file.filename : oldData.photo,
+            photo: fileName ? fileName : oldData.photo,
+            photo1: fileName1 ? fileName1 : oldData.photo1,
+            photo2: fileName2 ? fileName2 : oldData.photo2
         };
         // Assuming you have a function like findByIdAndUpdate to update an existing record
         const data = await About.findByIdAndUpdate(
