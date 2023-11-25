@@ -53,6 +53,29 @@ export async function handlePostRequest(req, res) {
 }
 
 
+export async function handleDeleteRequest(req, res) {
+    try {
+        const { id } = req.query;
+        const data = await Template.findByIdAndDelete(id, {
+            new: true,
+        });
+        return res.status(200).json({
+            success: true,
+            msg: "Post deleted successfully",
+            data: data
+        })
+    } catch (error) {
+        console.error('Error in DELETE handler:', error.message);
+        res.status(500).json({
+            success: false,
+            error: 'Internal Server Error',
+        });
+    }
+
+
+}
+
+
 export async function handlePutRequest(req, res) {
     try {
         const { id } = req.query; // Assuming the ID is part of the request parameters

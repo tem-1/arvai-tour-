@@ -1,5 +1,5 @@
 import { connectMongoDB } from "../../libs/connectMongoDb";
-import { handleGetRequest, handleGetDetailRequest, handleGetRequestDetail, handlePostRequest, handlePutRequest } from "../../libs/controller/countryController";
+import { handleGetRequest, handleGetDetailRequest, handleGetRequestDetail, handlePostRequest, handlePutRequest, handleDeleteRequest } from "../../libs/controller/countryController";
 import util from 'util';
 import upload from "../../libs/middleware/fileUpload";
 export const config = {
@@ -18,6 +18,7 @@ export default async function handler(req, res) {
                 await handleGetDetailRequest(req, res);
                 break;
             case 'DELETE':
+                handleDeleteRequest(req, res);
                 // Add logic for DELETE request
                 break;
             case 'PUT':
