@@ -1,5 +1,5 @@
 import { connectMongoDB } from "../../libs/connectMongoDb";
-import { handleGetRequest, handleGetRequestDetail, handlePostRequest } from "../../libs/controller/countryController";
+import { handleGetRequest, handleGetDetailRequest, handleGetRequestDetail, handlePostRequest, handlePutRequest } from "../../libs/controller/countryController";
 import util from 'util';
 import upload from "../../libs/middleware/fileUpload";
 export const config = {
@@ -15,19 +15,14 @@ export default async function handler(req, res) {
     try {
         switch (req.method) {
             case 'GET':
-                await handleGetRequest(req, res);
-                break;
-            case 'POST':
-                // Handle file upload separately with middleware
-                await uploadPromise(req, res);
-                // Now call the actual post request handler
-                await handlePostRequest(req, res);
+                await handleGetDetailRequest(req, res);
                 break;
             case 'DELETE':
                 // Add logic for DELETE request
                 break;
             case 'PUT':
-                // Add logic for PUT request
+                await uploadPromise(req, res)
+                await handlePutRequest(req, res);
                 break;
             default:
                 res.status(405).json({ success: false, error: 'Method Not Allowed' });
