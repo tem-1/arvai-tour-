@@ -46,6 +46,15 @@ userSchema.pre("save", async function () {
 userSchema.methods.checkPassword = async function (pass) {
     return await bcrypt.compare(pass, this.password);
 };
+userSchema.pre("findOneAndUpdate", async function (next) {
+    if (!this._update.password) {
+        return next();
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    this._update.password = await bcrypt.hash(this._update.password, salt);
+    next();
+});
 
 userSchema.methods.getJsonWebToken = function () {
     const token = jwt.sign(
